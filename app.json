@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Future3D",
-    "slug": "Future3D",
+    "slug": "future3d",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "213cb02c-1cae-4c9e-a660-ee41b7817855"
+      }
+    },
+    "owner": "svantewen"
   }
 }
