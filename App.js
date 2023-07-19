@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Svanten text</Text>
+      <Text style={{ color: 'blue' }}>Svanten text</Text>
       <StatusBar style="auto" />
     </View>
   );
