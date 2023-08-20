@@ -1,27 +1,54 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Image, Button } from 'react-native';
 
 const PlaceholderImage = require('./assets/images/berlin.jpg');
 
+
+
+
+
 export default function App() {
+  
+  
+  [colorIndex, setColorIndex] = useState(0)
+
+  const swbgcolor=['red','yellow','gray']
+
+  const changeSWbgColor = () => {
+    if (colorIndex >= 2) {
+      setColorIndex(0)
+      return
+    }
+    setColorIndex(++colorIndex)
+  }
+   
   return (
-    <View style={styles.container}>
-      <View style={styles.imageContainer}>
+    <View style={[styles.boxOfElements,{backgroundColor: swbgcolor[colorIndex]}]}>
+    
+    <View style={styles.imageContainer}>
         <Image source={PlaceholderImage} style={styles.image} />
-      </View>
-      <Text style={{ color: 'blue' }}>Svanten text</Text>
+    </View>
+
+    <Button onPress={changeSWbgColor} title="Click Me" color="#841584" />
+ 
+    <Text style={{ color: 'blue' }}>Svanten text</Text>
       <StatusBar style="auto" />
     </View>
   );
 }
 
+
+
+
+
 const styles = StyleSheet.create({
-  container: {
+  boxOfElements: {
     flex: 1,
-    backgroundColor: '#25292e',
+    backgroundColor:'green',
     alignItems: 'center',
   },
-  imageContainer: {
+  imrageContainer: {
     flex: 1,
     paddingTop: 58,
   },
@@ -31,3 +58,8 @@ const styles = StyleSheet.create({
     borderRadius: 18,
   },
 });
+
+
+
+
+
